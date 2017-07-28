@@ -1,9 +1,8 @@
 package com.visionsmarts.pic2shop.client;
 
-import static android.content.Intent.ACTION_VIEW;
+import android.content.Intent;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 import android.widget.Toast;
@@ -35,7 +34,7 @@ public final class Utils {
 
 	public static void launchMarketToInstallApp(Context ctx, String pkgName) {
 		try {
-			Intent intent = new Intent(ACTION_VIEW,
+			Intent intent = new Intent(Intent.ACTION_VIEW,
 					Uri.parse("market://details?id=" + pkgName));
 			ctx.startActivity(intent);
 		} catch (ActivityNotFoundException e) {

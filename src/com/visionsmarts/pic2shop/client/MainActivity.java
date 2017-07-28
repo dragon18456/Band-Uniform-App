@@ -1,8 +1,5 @@
 package com.visionsmarts.pic2shop.client;
 
-import static android.view.View.GONE;
-import static android.view.View.VISIBLE;
-
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -59,21 +56,21 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onResume() {
 		super.onResume();
 		if (Utils.isFreeScannerAppInstalled(this)) {
-			scanWithFreeButton.setVisibility(VISIBLE);
-			installFreeScannerButton.setVisibility(GONE);
+			scanWithFreeButton.setVisibility(View.VISIBLE);
+			installFreeScannerButton.setVisibility(View.GONE);
 		} else {
-			scanWithFreeButton.setVisibility(GONE);
-			installFreeScannerButton.setVisibility(VISIBLE);
+			scanWithFreeButton.setVisibility(View.GONE);
+			installFreeScannerButton.setVisibility(View.VISIBLE);
 		}
 		if (Utils.isProScannerAppInstalled(this)) {
-			scanWithProButton.setVisibility(VISIBLE);
-			installProScannerButton.setVisibility(GONE);
+			scanWithProButton.setVisibility(View.VISIBLE);
+			installProScannerButton.setVisibility(View.GONE);
 		} else {
-			scanWithProButton.setVisibility(GONE);
-			installProScannerButton.setVisibility(VISIBLE);
+			scanWithProButton.setVisibility(View.GONE);
+			installProScannerButton.setVisibility(View.VISIBLE);
 		}
-		int extraFormatsVisibility = Utils.isProScannerAppInstalled(this) ? VISIBLE
-				: GONE;
+		int extraFormatsVisibility = Utils.isProScannerAppInstalled(this) ? View.VISIBLE
+				: View.GONE;
 		for (CheckBox cb : new CheckBox[] { ean8CheckBox, upceCheckBox,
 				itfCheckBox, code39CheckBox, code128CheckBox, codabarCheckBox,
 				qrCheckBox }) {
